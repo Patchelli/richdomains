@@ -12,6 +12,7 @@ namespace PaymentContext.Tests.Entities
         [Fact]
         public void TestName()
         {
+            var sub = new Subscription(null);
             var student = new Student("Patrick", "Patchelli", "10.900.199-6", "ppatchelli@gmail.com");
         }
     }

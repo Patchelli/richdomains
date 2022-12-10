@@ -20,6 +20,6 @@ namespace PaymentContext.Domain.Entities
         public string Document { get; set; }
         public string Email { get; set; }
         public string Address { get; set; }
-        public List<Subscription> Subscriptions { get; set; }
+        public IReadOnlyCollection<Subscription> Subscriptions { get; set; }
     }
 }
