@@ -2,12 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using PaymentContext.Domain.Enum;
+using PaymentContext.Domain.ValueObjects;
 
 namespace PaymentContext.Domain.Entities.Payments
 {
     public abstract class Payment
     {
-        public Payment(DateTime paidTime, DateTime expireDate, decimal total, decimal paidTotal, string payer, string document, string address, string email)
+        public Payment(DateTime paidTime, DateTime expireDate, decimal total, decimal paidTotal, string payer, EDocumentType document, Address address, Email email)
         {
             Number = Guid.NewGuid().ToString().Replace("-", "").Substring(0, 10).ToUpper();
             PaidTime = paidTime;
@@ -26,8 +28,8 @@ namespace PaymentContext.Domain.Entities.Payments
         public decimal Total { get; private set; }
         public decimal PaidTotal { get; private set; }
         public string Payer { get; private set; }
-        public string Document { get; private set; }
-        public string Address { get; private set; }
-        public string Email { get; set; }
+        public EDocumentType Document { get; private set; }
+        public Address Address { get; private set; }
+        public Email Email { get; set; }
     }
 }

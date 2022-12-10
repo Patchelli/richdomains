@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using PaymentContext.Domain.Enum;
+using PaymentContext.Domain.ValueObjects;
 
 namespace PaymentContext.Domain.Entities.Payments
 {
@@ -13,9 +15,9 @@ namespace PaymentContext.Domain.Entities.Payments
             decimal total,
             decimal paidTotal,
             string payer,
-            string document,
-            string address,
-            string email) : base(paidTime, expireDate, total, paidTotal, payer, document, address, email)
+            EDocumentType document,
+            Address address,
+            Email email) : base(paidTime, expireDate, total, paidTotal, payer, document, address, email)
         {
             CardHolderName = cardHolderName;
             CardNumber = cardNumber;
